@@ -1,0 +1,23 @@
+django==3.2.9
+django-jazzmin
+django-environ
+djangorestframework
+djangorestframework-simplejwt
+djoser
+django-cors-headers
+django-filter
+# django-countries
+django-autoslug
+#django-dbbackup
+Pillow
+psycopg2-binary
+gunicorn
+requests
+six
+typing-extensions
+cryptography
+flake8
+black
+isort
+wheel
+twilio

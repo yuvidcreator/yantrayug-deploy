@@ -1,0 +1,153 @@
+{% load static %}
+
+<nav class="navbar navbar-expand navbar-dark bg-dark topbar mb-4 static-top shadow">
+
+    <!-- Sidebar Toggle (Topbar) -->
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
+    <!-- Topbar Logo -->
+    <a class="navbar-brand" href="{% url 'Home-Page' %}">
+        <img src="{% static 'images/condorde-white-logo.png' %}" alt="" class="d-inline-block align-text-top">
+    </a>
+    <!-- /Topbar Logo -->
+
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
+        <!-- Nav Item - Managers -->
+        {% if not request.user.is_admin and not request.user.is_manager and not request.user.is_employee %}
+        <li class="nav-item dropdown no-arrow mx-1">
+            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i> Manager
+            </a>
+            <!-- Dropdown - Alerts -->
+            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'Manager-Signup' %}">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-primary">
+                            <i class="fas fa-file-alt text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-weight-bold">Manager Registration</span>
+                    </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'managerlogin' %}">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-success">
+                            <i class="fas fa-donate text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-weight-bold">Manager Login</span>
+                    </div>
+                </a>
+            </div>
+        </li>
+        {% endif %}
+
+        <!-- Nav Item - Accountants -->
+        {% if not request.user.is_admin and not request.user.is_accountant and not request.user.is_employee %}
+        <li class="nav-item dropdown no-arrow mx-1">
+            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i> Accountant
+            </a>
+            <!-- Dropdown - Alerts -->
+            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'Accountant-Signup' %}">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-primary">
+                            <i class="fas fa-file-alt text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-weight-bold">Accountant Registration</span>
+                    </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'accountantlogin' %}">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-success">
+                            <i class="fas fa-donate text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-weight-bold">Accountant Login</span>
+                    </div>
+                </a>
+            </div>
+        </li>
+        {% endif %} 
+
+        <!-- Nav Item - Salesman -->
+        {% if not request.user.is_admin and not request.user.is_salesman and not request.user.is_employee %}
+        <li class="nav-item dropdown no-arrow mx-1">
+            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i> Salesman
+            </a>
+            <!-- Dropdown - Alerts -->
+            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'Salesman-Signup' %}">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-primary">
+                            <i class="fas fa-file-alt text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-weight-bold">Salesman Registration</span>
+                    </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'salesmanlogin' %}">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-success">
+                            <i class="fas fa-donate text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-weight-bold">Salesman Login</span>
+                    </div>
+                </a>
+            </div>
+        </li>
+        {% endif %} 
+
+        <!-- Nav Item - Employee -->
+        {% if not request.user.is_admin and not request.user.is_employee %}
+        <li class="nav-item dropdown no-arrow mx-1">
+            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i> Employee
+            </a>
+            <!-- Dropdown - Alerts -->
+            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'Employee-Signup' %}">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-primary">
+                            <i class="fas fa-file-alt text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-weight-bold">Employee Registration</span>
+                    </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'employeelogin' %}">
+                    <div class="mr-3">
+                        <div class="icon-circle bg-success">
+                            <i class="fas fa-donate text-white"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="font-weight-bold">Employee Login</span>
+                    </div>
+                </a>
+            </div>
+        </li>
+        {% endif %} 
+        {% if request.user.is_authenticated %}
+        <li class="nav-item dropdown no-arrow mx-1">
+            <a class="nav-link dropdown-toggle" href="{% url 'logout' %}" id="alertsDropdown" role="button">
+                <i class="fas fa-sign-out fa-fw"></i> Logout
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+
+</nav>
