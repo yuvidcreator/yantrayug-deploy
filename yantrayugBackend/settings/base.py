@@ -123,12 +123,12 @@ if DEBUG:
 else:
     DATABASES = {
         "default": {
-            "ENGINE": env("DEV_DB_ENGINE"),
-            "NAME": env("DEV_DB_NAME"),
-            "USER": env("DEV_DB_USER"),
-            "PASSWORD": env("DEV_DB_PASS"),
-            "HOST": env("DEV_DB_HOST"),
-            "PORT": env("DEV_DB_PORT"),
+            "ENGINE": env("POSTGRES_ENGINE"),
+            "NAME": env("POSTGRES_DB"),
+            "USER": env("POSTGRES_USER"),
+            "PASSWORD": env("POSTGRES_PASSWORD"),
+            "HOST": env("POSTGRES_DB_HOST"),
+            "PORT": env("POSTGRES_DB_PORT"),
         }
     }
 
